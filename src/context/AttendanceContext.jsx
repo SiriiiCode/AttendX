@@ -5,7 +5,7 @@ import {
   useEffect,
 } from "react"
 
-const AttendanceContext =
+export const AttendanceContext =
   createContext()
 
 export function AttendanceProvider({

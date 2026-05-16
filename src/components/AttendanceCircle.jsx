@@ -1,9 +1,13 @@
+import { useContext } from "react"
+import { AttendanceContext } from "../context/AttendanceContext"
 export default function AttendanceCircle({
   percentage,
 }) {
+  const { requiredPercentage } =
+  useContext(AttendanceContext)
 
   const isSafe =
-    percentage >= 75
+    percentage >= requiredPercentage
 
   const progressColor =
     isSafe
