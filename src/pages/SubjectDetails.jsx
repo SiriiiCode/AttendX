@@ -99,6 +99,27 @@ function toggleDay(day) {
 }
 function handleSave() {
 
+  const total =
+    Number(editedTotalClasses)
+
+  const attended =
+    Number(editedAttendedClasses)
+
+  if (
+    total <= 0 ||
+    attended < 0 ||
+    attended > total ||
+    !Number.isInteger(total) ||
+    !Number.isInteger(attended)
+  ) {
+
+    alert(
+      "Enter valid attendance values"
+    )
+
+    return
+  }
+
   updateSubject({
 
     ...subject,
@@ -108,10 +129,10 @@ function handleSave() {
     code: editedCode,
 
     initialTotalClasses:
-      Number(editedTotalClasses),
+      total,
 
     initialAttendedClasses:
-      Number(editedAttendedClasses),
+      attended,
 
     schedule: editedSchedule,
   })
@@ -314,6 +335,8 @@ function getAttendanceInsight() {
 
     <input
       type="number"
+      min="0"
+      step="1"
 
       value={editedTotalClasses}
 
@@ -328,6 +351,8 @@ function getAttendanceInsight() {
 
     <input
       type="number"
+      min="0"
+      step="1"
 
       value={editedAttendedClasses}
 

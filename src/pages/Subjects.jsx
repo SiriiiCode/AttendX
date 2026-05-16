@@ -67,27 +67,49 @@ export default function Subjects() {
 
   function handleAddSubject() {
 
-    if (!name || !code) return
+  if (!name || !code) return
 
-    addSubject({
-      name,
-      code,
+  const total =
+    Number(initialTotalClasses)
 
-      schedule: selectedDays,
+  const attended =
+    Number(initialAttendedClasses)
 
-      initialTotalClasses,
-      initialAttendedClasses,
-    })
+  if (
+    total <= 0 ||
+    attended < 0 ||
+    attended > total ||
+    !Number.isInteger(total) ||
+    !Number.isInteger(attended)
+  ) {
 
-    setName("")
-    setCode("")
+    alert(
+      "Enter valid attendance values"
+    )
 
-    setInitialTotalClasses("")
-    setInitialAttendedClasses("")
-
-    setSelectedDays([])
+    return
   }
 
+  addSubject({
+
+    name,
+    code,
+
+    schedule: selectedDays,
+
+    initialTotalClasses: total,
+
+    initialAttendedClasses: attended,
+  })
+
+  setName("")
+  setCode("")
+
+  setInitialTotalClasses("")
+  setInitialAttendedClasses("")
+
+  setSelectedDays([])
+}
   return (
     <div className="p-6">
 
@@ -132,6 +154,8 @@ export default function Subjects() {
 
           <input
             type="number"
+            min="0"
+            step="1"
             placeholder="Total Classes Done"
 
             value={initialTotalClasses}
@@ -147,6 +171,8 @@ export default function Subjects() {
 
           <input
             type="number"
+            min="0"
+            step="1"
             placeholder="Classes Attended"
 
             value={initialAttendedClasses}
