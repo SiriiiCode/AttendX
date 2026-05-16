@@ -17,7 +17,7 @@ export default function Home() {
       </h1>
 
       <p className="text-slate-400 mt-2">
-        AI-powered attendance tracking.
+        Upload your timetable and let me set up the attendance track for you!
       </p>
 
       <p className="text-indigo-400 mt-4">

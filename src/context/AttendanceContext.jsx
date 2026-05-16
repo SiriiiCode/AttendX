@@ -26,33 +26,8 @@ export function AttendanceProvider({
 
         ? JSON.parse(savedSubjects)
 
-        : [
-            {
-              id: 1,
-
-              name: "Mathematics",
-
-              code: "MAT101",
-
-              schedule: [
-                "Monday",
-              ],
-
-              initialTotalClasses: 40,
-
-              initialAttendedClasses: 32,
-
-              records: {
-                "2026-05-10": [
-                  "present",
-                ],
-
-                "2026-05-11": [
-                  "absent",
-                ],
-              },
-            },
-          ]
+        : []
+          
 
     } catch {
 
