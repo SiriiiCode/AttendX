@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+.attendance-calendar {
+  width: 100% !important;
+
+  background: #020617 !important;
+
+  border: none !important;
+
+  color: white !important;
+
+  padding: 20px;
+
+  border-radius: 24px;
+
+  font-family: inherit;
+}
+
+.attendance-calendar button {
+  color: white;
+}
+
+.attendance-calendar .react-calendar__navigation {
+  margin-bottom: 20px;
+}
+
+.attendance-calendar .react-calendar__navigation button {
+  background: transparent;
+
+  border: none;
+
+  color: white;
+
+  font-size: 18px;
+
+  min-width: 44px;
+
+  border-radius: 12px;
+
+  transition: 0.2s;
+}
+
+.attendance-calendar
+.react-calendar__navigation button:hover {
+
+  background: #1e293b;
+}
+
+.attendance-calendar .react-calendar__month-view__weekdays {
+
+  text-transform: uppercase;
+
+  font-size: 12px;
+
+  color: #94a3b8;
+
+  margin-bottom: 10px;
+}
+
+.attendance-calendar .react-calendar__tile {
+
+  background: transparent;
+
+  border-radius: 14px;
+
+  height: 58px;
+
+  transition: 0.2s;
+
+  font-weight: 500;
+}
+
+.attendance-calendar
+.react-calendar__tile:hover {
+
+  background: #1e293b !important;
+}
+
+.attendance-calendar
+.react-calendar__tile--now {
+
+  border-color: aqua;
+
+  color: white !important;
+}
+
+.present-day {
+  background: #22c55e !important;
+
+  color: white !important;
+
+  border-radius: 14px;
+}
+
+.absent-day {
+  background: #ef4444 !important;
+
+  color: white !important;
+
+  border-radius: 14px;
+}
+
+.no-class-day {
+  background: #64748b !important;
+
+  color: white !important;
+
+  border-radius: 14px;
+}
